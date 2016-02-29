@@ -4,7 +4,7 @@ golang plugin for [asdf version manager](https://github.com/HashNuke/asdf)
 ## Install
 
 ```
-asdf plugin-add lua https://github.com/kennyp/asdf-golang.git
+asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 ```
 
 ## Use
