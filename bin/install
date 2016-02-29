@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+install_golang () {
+    local install_type=$1
+    local version=$2
+    local install_path=$3
+    local platform=""
+    local arch=""
+    local tempdir=""
+
+    [ "Linux" = "$(uname)" ] && platform="linux" || platform="darwin"
+    [ "x86_64" = "$(uname -m)" ] && arch="amd64" || arch="386"
+    [ "linux" = "${platform}" ] && tempdir=$(mktemp -dp asdf-golang.XXXX) || tempdir=$(mktemp -dt asdf-golang)
+
+    curl "https://storage.googleapis.com/golang/go${version}.${platform}-${arch}.tar.gz" -o "${tempdir}/archive.tar.gz"
+
+    tar -C "$install_path" -xzf "${tempdir}/archive.tar.gz"
+
+    rm -rf "${tempdir}"
+}
+
+install_golang $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
