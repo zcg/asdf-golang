@@ -3,6 +3,7 @@
 curl --silent https://storage.googleapis.com/golang \
     | sed -e $'s/<Key>\([^<]*\)<\/Key>/\\\n\\1\\\n/g' \
     | grep '.tar.gz' \
-    | sed -e 's/^go\([^.]*\).\([^.]*\).*/\1.\2/' \
+    | sed -e 's/^go\([^.]*\).\([^.]*\).\([^.]*\).*/\1.\2.\3/' \
+    | sed -e 's/.\(linux\|darwin\|freebsd\|src\).*$//' \
     | uniq \
     | tr '\n' ' '
