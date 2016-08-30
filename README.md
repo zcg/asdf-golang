@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kennyp/asdf-golang.svg?branch=master)](https://travis-ci.org/kennyp/asdf-golang)
+
 # asdf-golang
 golang plugin for [asdf version manager](https://github.com/HashNuke/asdf)
 
