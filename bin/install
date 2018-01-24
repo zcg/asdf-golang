@@ -39,7 +39,7 @@ my_mktemp () {
     if [ "linux" = "$1" ] ; then
         tempdir=$(mktemp -d asdf-golang.XXXX)
     else
-        tempdir=$(mktemp -dt asdf-golang)
+        tempdir=$(mktemp -dt asdf-golang.XXXX)
     fi
     echo -n $tempdir
 }
