@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/kennyp/asdf-golang.svg?branch=master)](https://travis-ci.org/kennyp/asdf-golang)
 
 # asdf-golang
-golang plugin for [asdf version manager](https://github.com/HashNuke/asdf)
+golang plugin for [asdf version manager](https://github.com/asdf-vm/asdf)
 
 ## Install
 
@@ -11,7 +11,7 @@ asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 
 ## Use
 
-Check the [asdf](https://github.com/HashNuke/asdf) readme for instructions on how to install & manage versions of go.
+Check the [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to install & manage versions of go.
 
 ## Contributing
 
