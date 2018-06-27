@@ -64,4 +64,5 @@ echo ${VERSIONS[@]} \
     | mysed 's/^go([^.]*).([^.]*).([^.]*).*/\1.\2.\3/' \
     | mysed 's/.(linux|darwin|freebsd|src).*$//' \
     | uniq \
+    | sort -t. -k 1,1 -k 2,2n -k 3,3n -k 4,4n -k 5,5n \
     | tr '\n' ' '
