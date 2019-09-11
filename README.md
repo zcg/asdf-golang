@@ -3,6 +3,11 @@
 # asdf-golang
 golang plugin for [asdf version manager](https://github.com/asdf-vm/asdf)
 
+
+## Requirements
+**Ubuntu 16.04+** `curl`   
+
+
 ## Install
 
 ```
