@@ -60,7 +60,7 @@ echo ${VERSIONS[@]} \
     | tr ' ' '\n' \
     | grep '.tar.gz' \
     | grep '\(linux\|darwin\|freebsd\)' \
-    | grep '\-\(amd64\|386\|armv6l\|armv7l\)\.' \
+    | grep '\-\(amd64\|386\|armv6l\|armv7l\|arm64\)\.' \
     | mysed 's/^go([^.]*).([^.]*).([^.]*).*/\1.\2.\3/' \
     | mysed 's/.(linux|darwin|freebsd|src).*$//' \
     | uniq \
