@@ -7,15 +7,6 @@ PLUGIN_DIR="$(dirname "${BASH_SOURCE[0]}")/.."
 # shellcheck source=/dev/null
 source "$PLUGIN_DIR/lib/helpers.sh"
 
-my_mktemp () {
-    local tempdir=""
-    local platform=""
-    platform="$(get_platform)"
-
-    tempdir=$(mktemp -dt asdf-golang.XXXX)
-    echo -n "$tempdir"
-}
-
 install_golang () {
     local version="$1"
     local download_path="$2"
@@ -23,7 +14,7 @@ install_golang () {
     created_tmp="0"
 
     if [ -z "$download_path" ] ; then
-        download_path="$(my_mktemp)"
+        download_path=$(mktemp -dt asdf-golang.XXXX)
         created_tmp="1"
     fi
     ASDF_INSTALL_VERSION="$version" ASDF_DOWNLOAD_PATH="$download_path" "$PLUGIN_DIR/bin/download"
