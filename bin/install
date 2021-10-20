@@ -16,8 +16,8 @@ install_golang () {
     if [ -z "$download_path" ] ; then
         download_path=$(mktemp -dt asdf-golang.XXXX)
         created_tmp="1"
+        ASDF_INSTALL_VERSION="$version" ASDF_DOWNLOAD_PATH="$download_path" "$PLUGIN_DIR/bin/download"
     fi
-    ASDF_INSTALL_VERSION="$version" ASDF_DOWNLOAD_PATH="$download_path" "$PLUGIN_DIR/bin/download"
 
     tar -C "$install_path" -xzf "${download_path}/archive.tar.gz"
     
