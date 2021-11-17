@@ -24,7 +24,7 @@ jobs:
       - name: Test plugin
         uses: asdf-vm/actions/plugin-test@v1
         with:
-          command: my_tool --version
+          command: go version
 
   lint:
     runs-on: ubuntu-latest
