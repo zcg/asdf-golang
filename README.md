@@ -1,6 +1,6 @@
 # asdf-golang
 
-[![Build Status](https://app.travis-ci.com/kennyp/asdf-golang.svg?branch=master)](https://app.travis-ci.com/kennyp/asdf-golang)
+[![CI](https://github.com/kennyp/asdf-golang/actions/workflows/main.yml/badge.svg)](https://github.com/kennyp/asdf-golang/actions/workflows/main.yml)
 
 golang plugin for [asdf version manager](https://github.com/asdf-vm/asdf)
 
