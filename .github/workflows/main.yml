@@ -1,0 +1,37 @@
+name: CI
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  plugin_test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Test plugin
+        uses: asdf-vm/actions/plugin-test@v1
+        with:
+          command: my_tool --version
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run ShellCheck
+        run: shellcheck bin/*
