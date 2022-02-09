@@ -7,23 +7,6 @@ PLUGIN_DIR="$(dirname "${BASH_SOURCE[0]}")/.."
 # shellcheck source=/dev/null
 source "$PLUGIN_DIR/lib/helpers.sh"
 
-get_arch () {
-    local arch=""
-    local arch_check=${ASDF_GOLANG_OVERWRITE_ARCH:-"$(uname -m)"}
-    case "${arch_check}" in
-        x86_64|amd64) arch="amd64"; ;;
-        i686|i386|386) arch="386"; ;;
-        armv6l|armv7l) arch="armv6l"; ;;
-        aarch64|arm64) arch="arm64"; ;;
-        ppc64le) arch="ppc64le"; ;;
-        *)
-            fail "Arch '${arch_check}' not supported!"
-            ;;
-    esac
-
-    echo -n $arch
-}
-
 check_shasum() {
     local archive_file_name=$1
     local authentic_checksum_file=$2
