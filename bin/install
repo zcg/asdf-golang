@@ -46,6 +46,10 @@ install_default_go_pkgs() {
 
     # if using go > 1.16 then use go install as the preferred donwload path
     if [ "$go_major_version" -ge 2 ] || [ "${go_minor_version//[!0-9]*}" -ge 16 ]; then
+        if [[ "$name" != *"@"* ]]; then
+            name="${name}@latest"
+        fi
+
         GOROOT="$ASDF_INSTALL_PATH/go" \
             GOPATH="$ASDF_INSTALL_PATH/packages" \
             PATH="$go_path:$PATH" \
