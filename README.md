@@ -25,9 +25,9 @@ asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 
 Check the [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to install & manage versions of go.
 
-## When using `go get`
+## When using `go get` or `go install`
 
-After using `go get` to install a package you need to run `asdf reshim golang` to get any new shims.
+After using `go get` or `go install` to install a package you need to run `asdf reshim golang` to get any new shims.
 
 ### Default `go get` packages
 
